@@ -58,14 +58,14 @@ To run this framework, you need an environment that can interact with a large la
 These tools are ideal for scripting and automating the review process. Please follow the official guides to install and authenticate at least one.
 
 - **Claude Code (by Anthropic):** An agentic CLI that integrates into your terminal.
-  ➡️ **Official Setup Guide:** **[docs.anthropic.com/claude/claude-code](https://docs.anthropic.com/claude/claude-code)**
+  ➡️ **Official Setup Guide:** **[https://docs.anthropic.com/claude/claude-code](https://docs.anthropic.com/en/docs/claude-code/setup)**
 
 - **Gemini CLI (by Google):** Brings the Gemini model to your command line.
   ➡️ **Official Getting Started Guide:** **[ai.google.dev/docs/gemini_cli](https://ai.google.dev/docs/gemini_cli/get_started)**
 
 ### IDE Integration
 
-As an alternative, you can use an AI agent assistant directly within your code editor to manually orchestrate the review process.
+As an alternative, you can use an AI agent assistant directly within your code editor to orchestrate the review process.
 
 - **GitHub Copilot (powered by OpenAI):** Use Copilot Chat (in agent Mode) within your IDE (like VS Code).
   ➡️ **Official Getting Started Guide:** **[docs.github.com/copilot/getting-started](https://docs.github.com/copilot/getting-started-with-github-copilot)**
