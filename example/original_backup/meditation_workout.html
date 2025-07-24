@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Meditation & Mind Training Workplan – 10 Week Program</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+ :root {
+   --bg:#101418;--panel:#1b222b;--panel2:#242e38;--text:#f5f7fa;--muted:#9aa9b7;
+   --accent:#4aa3ff;--accent2:#ffd166;--good:#51d88a;--warn:#ffb347;--bad:#ff6b6b;
+   --radius:12px;--mono:"SFMono-Regular","Consolas",monospace;--sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+ }
+ body{margin:0;font-family:var(--sans);background:linear-gradient(120deg,#161c23,#0f1216);color:var(--text);line-height:1.45;padding:2rem 1rem 4rem;}
+ h1,h2,h3,h4{font-weight:600;letter-spacing:.5px;margin:0 0 .65rem;line-height:1.15}
+ h1{font-size:clamp(2rem,4vw,2.75rem);margin-top:0}
+ h2{margin-top:2.25rem;font-size:1.6rem;}
+ h3{margin-top:1.5rem;font-size:1.25rem;}
+ h4{margin-top:1.25rem;font-size:1.05rem;}
+ p{margin:.6rem 0}
+ a{color:var(--accent);text-decoration:none}
+ a:hover{text-decoration:underline}
+ table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.85rem;}
+ th,td{padding:.55rem .6rem;vertical-align:top;text-align:left}
+ thead th{background:#28323c;font-weight:600;text-transform:uppercase;font-size:.65rem;letter-spacing:.5px;}
+ tbody tr:nth-child(even){background:rgba(255,255,255,.03)}
+ tbody tr:nth-child(odd){background:rgba(255,255,255,.05)}
+ code{font-family:var(--mono);font-size:.85em}
+ hr{border:none;border-top:1px solid #2e3742;margin:2.25rem 0}
+ .muted{color:var(--muted);font-size:.85rem}
+ .card{background:linear-gradient(140deg,var(--panel),var(--panel2));border:1px solid #2a343f;padding:1rem 1.15rem 1.3rem;border-radius:var(--radius);margin:1rem 0;position:relative;}
+ .badge{display:inline-block;background:var(--accent);color:#03263c;padding:.25rem .55rem;border-radius:6px;font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-right:.5rem}
+ .decision-list{list-style:none;margin:0;padding:0}
+ .decision-list li{margin:0 0 .9rem;padding:.75rem 1rem .85rem;background:#202832;border-left:4px solid var(--accent);border-radius:6px}
+ .decision-list h4{margin:.1rem 0 .35rem;font-size:.9rem;text-transform:uppercase;letter-spacing:.5px}
+ .pill{background:#2a3642;padding:.3rem .6rem;border-radius:999px;font-size:.6rem;letter-spacing:.5px;text-transform:uppercase;margin:0 .35rem .35rem 0;display:inline-block;font-weight:600;color:var(--accent2)}
+ .warning{border-left-color:var(--warn)!important}
+ .good{border-left-color:var(--good)!important}
+ .tips{list-style:disc;padding-left:1.1rem}
+ .grid{display:grid;gap:1.2rem}
+ @media(min-width:900px){.grid.cols-2{grid-template-columns:repeat(2,1fr)}}
+ @media(min-width:1200px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
+ .small{font-size:.7rem;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+ .ref-list{font-size:.75rem;line-height:1.25}
+ .callout{background:#212a34;border:1px solid #32404c;padding:.75rem 1rem;border-radius:8px;margin:1rem 0}
+ .callout.good{border-color:var(--good)}
+ .callout.warn{border-color:var(--warn)}
+ .anchor-nav{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0 2rem}
+ .anchor-nav a{background:#212933;padding:.45rem .75rem;border:1px solid #303a45;border-radius:6px;font-size:.65rem;font-weight:600;text-transform:uppercase;color:var(--muted);letter-spacing:.5px}
+ .anchor-nav a:hover{color:var(--text);background:#2a3541}
+ section{max-width:1200px;margin:0 auto}
+ mark{background:#4aa3ff2c;color:var(--text);padding:0 .25em;border-radius:4px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Meditation & Mind Training Workplan (10 Weeks)</h1>
+  <p class="muted">Designed like a gym program, this workplan includes architectural decisions, evidence rationale, augmentation ("data augmentation" for the mind), pitfalls & fixes, and a modifiable schedule for workday constraints.</p>
+  <div class="anchor-nav">
+    <a href="#safety-disclaimer">⚠️ Safety Info</a>
+    <a href="#overview">Overview</a>
+    <a href="#goals">Goals</a>
+    <a href="#architecture">Decision Records</a>
+    <a href="#phases">Phases</a>
+    <a href="#weekly-plan">Weekly Plan</a>
+    <a href="#exercises">Exercise Descriptions</a>
+    <a href="#augmentation">Augmentation Toolkit</a>
+    <a href="#pitfalls">Pitfalls</a>
+    <a href="#metrics">Metrics</a>
+    <a href="#maintenance">Maintenance</a>
+    <a href="#references">References</a>
+  </div>
+</header>
+<section id="safety-disclaimer" class="callout warn">
+<h2>⚠️ Important Safety Information</h2>
+<p><strong>Medical Disclaimer:</strong> This meditation program is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. <strong>Consult your healthcare provider before starting if you have:</strong></p>
+<ul>
+<li>History of mental health conditions (depression, anxiety, PTSD, bipolar disorder)</li>
+<li>Current psychiatric medication use</li>
+<li>History of trauma, abuse, or dissociative episodes</li>
+<li>Seizure disorders or neurological conditions</li>
+<li>Substance abuse history</li>
+</ul>
+
+<p><strong>Age Restrictions:</strong> This program is designed for adults 18+. Minors should only participate with parental supervision and healthcare provider approval.</p>
+
+<p><strong>Equipment Costs:</strong> This program recommends the Muse neurofeedback device (approximately $200-300). While beneficial, <strong>all practices can be completed without any devices</strong> - device-free alternatives are provided throughout.</p>
+
+<p><strong>When to Stop Immediately:</strong></p>
+<ul>
+<li>Severe emotional distress or panic attacks</li>
+<li>Dissociation or feeling disconnected from reality</li>
+<li>Increased depression, anxiety, or suicidal thoughts</li>
+<li>Persistent sleep disturbances or nightmares</li>
+<li>Any concerning psychological or physical symptoms</li>
+</ul>
+
+<p><strong>Crisis Resources:</strong></p>
+<ul>
+<li><strong>US:</strong> National Suicide Prevention Lifeline: 988</li>
+<li><strong>US:</strong> Crisis Text Line: Text HOME to 741741</li>
+<li><strong>International:</strong> Contact your local emergency services or mental health crisis line</li>
+</ul>
+
+<p><strong>Data Privacy Notice:</strong> If using neurofeedback devices, be aware that these devices may collect and store personal biometric data. Review the manufacturer's privacy policy and consider local-only data processing options.</p>
+</section>
+
+
+<section id="overview">
+<h2>Overview</h2>
+<p>This program trains core “mental muscles” using <strong>progressive overload</strong>, <strong>context variability</strong>, and <strong>recovery</strong> exactly like a physical training block. It is split into phases: <em>Foundation → Stabilization → Expansion → Integration → Consolidation</em>. You get two scheduling modes:</p>
+<ul>
+  <li><strong>Daily Mode (initial habit)</strong> – small consistent anchor every day.</li>
+  <li><strong>Optimized Mode (after habit)</strong> – <mark>5 formal days + 2 integration/recovery days</mark> for better consolidation and reduced “overfitting.”</li>
+</ul>
+<p>Weekday mid-day windows are assumed busy at work: only very short “micro” practices there. Longer broad-awareness or high-challenge sessions shift to mornings, evenings, or weekends.</p>
+</section>
+
+<section id="goals">
+<h2>Primary Goals</h2>
+<table>
+<thead><tr><th>Capacity (“Muscle”)</th><th>Outcome</th><th>How We Train It</th></tr></thead>
+<tbody>
+<tr><td>Sustained Attention</td><td>Hold focus & return quickly</td><td>Focused Attention, Neurofeedback, Micro-Hits</td></tr>
+<tr><td>Awareness of Awareness</td><td>Notice mind & state shifts early</td><td>Open Monitoring, Noting, Micro OM Bursts, deliberate anchor drops</td></tr>
+<tr><td>Emotional Regulation / Positive Affect</td><td>Softer reactivity, warmth</td><td>Compassion, Body Scan, applied mindful pauses</td></tr>
+<tr><td>Body Awareness</td><td>Early detection of tension</td><td>Body Scan, Breath sensing, Walking</td></tr>
+<tr><td>Contextual Robustness</td><td>Transfer to real-life noise & stress</td><td>Augmentation (noise, posture, affect primes), Walking, challenge NF</td></tr>
+<tr><td>Habitual Integration</td><td>Automatic micro resets (trait)</td><td>Tier 1 micro-hits & Tier 2 micro OM bursts, weekly reflection</td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="architecture">
+<h2>Architectural Decision Records (ADRs)</h2>
+<p>Each key design decision includes: <em>Context • Decision • Alternatives • Rationale • Consequences</em>.</p>
+<ul class="decision-list">
+  <li>
+    <h4>ADR-01: Use Progressive Phases Instead of One Static Routine</h4>
+    <p><strong>Context:</strong> Skills adapt quickly early, then plateau. Random changes risk noise; no change risks stagnation.</p>
+    <p><strong>Decision:</strong> Five phases with gradual increments (minutes, complexity) then taper.</p>
+    <p><strong>Alternatives:</strong> Constant 15-min daily sit; random session generator.</p>
+    <p><strong>Rationale:</strong> Mirrors strength training & spacing literature: moderate progressive overload improves consolidation; taper reduces fatigue & reveals gains.</p>
+    <p><strong>Consequences:</strong> Requires tracking to know when to progress; easier to diagnose plateaus.</p>
+  </li>
+  <li>
+    <h4>ADR-02: Introduce Multiple Practice “Angles” (FA, OM, Compassion) Rather Than Only One</h4>
+    <p><strong>Context:</strong> Different meditation styles engage partially distinct neural networks.</p>
+    <p><strong>Decision:</strong> Layer techniques sequentially (FA baseline → OM/Noting → Compassion/Writing → Combo).</p>
+    <p><strong>Rationale:</strong> Like hitting a muscle from several directions; reduces overfitting to a single context and supports transfer.</p>
+    <p><strong>Consequences:</strong> Slight learning curve early; richer long-term resilience.</p>
+  </li>
+  <li>
+    <h4>ADR-03: Workday Mid-Day = Micro Practices Only</h4>
+    <p><strong>Context:</strong> Limited uninterrupted time at work; 5-min sits are high friction.</p>
+    <p><strong>Decision:</strong> Replace mid-day full OM with 90–120 s Micro OM Burst + Tier-1 micro-hits.</p>
+    <p><strong>Rationale:</strong> Distributed “state reinstatement” predicts later trait; low friction sustains adherence.</p>
+    <p><strong>Consequences:</strong> Weekend handles longer OM doses; reduces daily cognitive tax.</p>
+  </li>
+  <li>
+    <h4>ADR-04: Frequency Shift After Habit → 5 Formal Days + 2 Integration Days</h4>
+    <p><strong>Context:</strong> Daily formal practice builds habit but yields diminishing returns later.</p>
+    <p><strong>Decision:</strong> After baseline (≈Weeks 1–4), move to 5 focused days, 1 integration (light), 1 rest.</p>
+    <p><strong>Rationale:</strong> Spacing & slight forgetting improve retention; rest day lowers interference.</p>
+    <p><strong>Consequences:</strong> Must schedule intentionally; baseline session kept weekly for benchmarking.</p>
+  </li>
+  <li>
+    <h4>ADR-05: “Augmentation” (Noise, Posture, Affective Priming) – Staged</h4>
+    <p><strong>Context:</strong> Overfitting occurs when only silent seated sessions are used; too much early variability is destabilizing.</p>
+    <p><strong>Decision:</strong> Introduce one augmentation dimension at a time after stability, progressing like curriculum learning.</p>
+    <p><strong>Rationale:</strong> Human analogue of data augmentation improves generalization (contextual interference principle) while protecting early signal quality.</p>
+    <p><strong>Consequences:</strong> Requires simple tracking matrix; high engagement through novelty.</p>
+  </li>
+  <li>
+    <h4>ADR-06: Use Muse Neurofeedback Sparingly (Calibration Tool)</h4>
+    <p><strong>Context:</strong> Consumer EEG is helpful feedback but can promote chasing numbers.</p>
+    <p><strong>Decision:</strong> Use 2–3 NF sessions/week; escalate <em>context difficulty</em> before length; always include device-free sessions.</p>
+    <p><strong>Rationale:</strong> Prevent dependency; treat calm % like technique check not a trophy.</p>
+    <p><strong>Consequences:</strong> Balanced extrinsic & intrinsic feedback; easier mindfulness generalization.</p>
+  </li>
+</ul>
+</section>
+
+<section id="phases">
+<h2>Phase Progression</h2>
+<table>
+<thead><tr><th>Phase</th><th>Weeks</th><th>Focus</th><th>Anchor Length</th><th>Formal Weekly Volume*</th><th>Effort (RIR)</th></tr></thead>
+<tbody>
+<tr><td>Foundation</td><td>1–2</td><td>Habit, baseline metrics</td><td>5–10m</td><td>45–65m</td><td>3–4 easy</td></tr>
+<tr><td>Stabilization</td><td>3–4</td><td>Longer focus, compassion intro</td><td>10–15m</td><td>85–115m</td><td>2–3</td></tr>
+<tr><td>Expansion</td><td>5–7</td><td>Context variety (walking, noise)</td><td>12–18m</td><td>120–150m</td><td>1–2 challenging</td></tr>
+<tr><td>Integration</td><td>8–9</td><td>Performance simulation</td><td>15–25m</td><td>130–140m</td><td>1–2 (one "hard")</td></tr>
+<tr><td>Consolidation</td><td>10</td><td>Ease & maintenance plan</td><td>12–18m</td><td>110–125m</td><td>3 (deload)</td></tr>
+</tbody>
+</table>
+<p class="muted">*Formal volume excludes micro-hits (brief resets).</p>
+</section>
+
+<section id="weekly-plan">
+<h2>Weekly Plan (Optimized Mode)</h2>
+<p>This shows the <strong>5 Formal + 2 Integration</strong> pattern (after initial habit is reliable). If still building habit, use daily version (anchor every day) then transition.</p>
+
+<table>
+<thead><tr><th>Week</th><th>Formal Days (Mon–Fri)</th><th>Integration Days (Sat/Sun)</th><th>Key Changes</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Daily 5–10m FA (3 Muse) + Body Scan 3×</td><td>Light FA or rest</td><td>Baseline; build cues</td></tr>
+<tr><td>2</td><td>FA 10m (5×) + NF 2× + Body Scan 3×</td><td>Weekend OM 5m (2×)</td><td>Introduce micro OM bursts at work</td></tr>
+<tr><td>3</td><td>FA 12–15m (5×) + NF 2× + Compassion 1×</td><td>Weekend OM 8–10m (2×)</td><td>Compassion begins</td></tr>
+<tr><td>4</td><td>FA 15m (4×) + NF 2× + Compassion 2×</td><td>Weekend OM 12m (Noting)</td><td>Noting light</td></tr>
+<tr><td>5</td><td>FA 18–20m (3×) + NF 2× + Compassion 2×</td><td>Weekend OM 15m + Walking 2–3×</td><td>Walking & noise NF</td></tr>
+<tr><td>6</td><td>FA 20m (3×) + NF challenge 2× + Compassion 2×</td><td>Weekend OM 18–20m + Walking</td><td>Peak volume</td></tr>
+<tr><td>7</td><td>FA reduced (2×) + NF outdoor 2× + Compassion 2×</td><td>Weekend OM 20m + Walking</td><td>Context variety high</td></tr>
+<tr><td>8</td><td>FA 15m (2×) + NF contrast 2×</td><td>Weekend OM 20m + Walking</td><td>Taper + applied drills</td></tr>
+<tr><td>9</td><td>Combo 35m (2×) + NF priming 2× + OM 1×</td><td>Weekend OM 20m</td><td>Performance simulation</td></tr>
+<tr><td>10</td><td>FA 15m (2× Muse) + NF baseline vs noise</td><td>Weekend OM 20m + Maintenance plan</td><td>Deload & reflection</td></tr>
+</tbody>
+</table>
+
+<h3>Example Week (Mid-Program, Week 6)</h3>
+<table>
+<thead><tr><th>Day</th><th>Morning Anchor</th><th>Mid-Day Work</th><th>Evening / Weekend</th><th>Focus</th></tr></thead>
+<tbody>
+<tr><td>Mon</td><td>FA 20m + mini OM 5m (Muse)</td><td>Micro OM Burst</td><td>Compassion 12m</td><td>Aperture shift</td></tr>
+<tr><td>Tue</td><td>NF 15m (challenge)</td><td>Micro OM Burst</td><td>Walking 12–15m</td><td>Robustness</td></tr>
+<tr><td>Wed</td><td>FA 20m (device-free)</td><td>Micro OM Burst</td><td>Body Scan 15m</td><td>Recovery</td></tr>
+<tr><td>Thu</td><td>FA 20m (noise)</td><td>Micro OM Burst</td><td>Compassion 12m</td><td>Affect expansion</td></tr>
+<tr><td>Fri</td><td>NF 15m (quiet)</td><td>Micro OM Burst</td><td>Walking 12–15m</td><td>Transfer</td></tr>
+<tr><td>Sat</td><td>OM Sit 18–20m</td><td>—</td><td>Walking 15m (varied surface)</td><td>Peak breadth</td></tr>
+<tr><td>Sun</td><td>OM Sit 18–20m</td><td>—</td><td>Reflection 8m</td><td>Integrate</td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="exercises">
+<h2>Exercise Descriptions (How-To, Pitfalls & Fixes)</h2>
+<div class="grid cols-2">
+<div class="card">
+<h3>Focused Attention (FA)</h3>
+<p><strong>Goal:</strong> Stabilize attention on a single anchor (usually breath at nostrils or abdomen).</p>
+<p><strong>How:</strong> Posture upright but relaxed. Notice one region of breath. When mind wanders, label silently “thinking” or “wandering,” gently return. That return is the “rep.”</p>
+<p><strong>Progression:</strong> Increase minutes only after sessions feel steady (mind-wander recognized quickly). Add mild noise or eyes-open later.</p>
+<p><strong>Common Pitfalls & Fixes:</strong></p>
+<ul class="tips">
+<li><em>Chasing stillness / suppressing thoughts:</em> Instead, allow thoughts; return lightly.</li>
+<li><em>Getting drowsy:</em> Open eyes slightly, sit more upright, shorten session.</li>
+<li><em>Plateau calm %:</em> Introduce context augmentation (noise) before adding time.</li>
+</ul>
+</div>
+<div class="card">
+<h3>Neurofeedback (NF – Muse)</h3>
+<p><strong>Goal:</strong> Real-time feedback (birds or calm %) to reinforce subtle internal cues of stability.</p>
+<p><strong>How:</strong> 2-min calibration → session. Maintain natural breath; treat feedback as informational, not a game.</p>
+<p><strong>Progression:</strong> Quiet → mild noise → varied environment → emotional priming.</p>
+<p><strong>Pitfalls:</strong> Chasing numbers (tightening jaw) → <em>Fix:</em> Broaden attention, lengthen exhale slightly. Overuse (dependency) → keep device-free FA days.</p>
+</div>
+<div class="card">
+<h3>Open Monitoring (OM)</h3>
+<p><strong>Goal:</strong> Wide, choiceless awareness of sensory, mental, and emotional events without clinging.</p>
+<p><strong>How:</strong> Start with 1–2 minutes FA. Then expand to whole field: sounds, body, thoughts. Label occasionally (“hearing,” “planning”) to re-engage meta-awareness, then drop labels.</p>
+<p><strong>Progression:</strong> Increase length; fade labels; add walking or eyes-open.</p>
+<p><strong>Pitfalls:</strong> Over-labeling (feels mechanical) → lengthen gap between labels. Drifting into rumination → briefly narrow to breath then reopen.</p>
+</div>
+<div class="card">
+<h3>Noting (Within OM)</h3>
+<p><strong>Goal:</strong> Improve resolution of experiences and early detection of mind events.</p>
+<p><strong>How:</strong> Every 8–15 seconds quietly name dominant phenomenon (“hearing,” “warmth,” “thinking”) then let go.</p>
+<p><strong>Pitfalls:</strong> Rapid fire labeling → slows; treat like seasoning, not main dish. Emotional discomfort: note “unpleasant,” return to breath for a few cycles.</p>
+</div>
+<div class="card">
+<h3>Compassion / Loving-Kindness (CMP)</h3>
+<p><strong>Goal:</strong> Cultivate warmth and positive affect to balance cognitive training.</p>
+<p><strong>How:</strong> Bring to mind self → loved one → neutral person → (later) mildly difficult person → all beings. Repeat phrases: “May you be safe / healthy / peaceful / free.” Sync phrases with natural breath.</p>
+<p><strong>Pitfalls:</strong> Numbness → shorten session; use imagery (seeing them smiling). Strong aversion with difficult person → revert to neutral person for a week.</p>
+</div>
+<div class="card">
+<h3>Body Scan (BS)</h3>
+<p><strong>Goal:</strong> Interoceptive map & down-regulation.</p>
+<p><strong>How:</strong> Move attention head → toes slowly. Notice contact, temperature, tension; allow softening. If mind wanders, pick up at next region.</p>
+<p><strong>Pitfalls:</strong> Sleepiness → earlier timing or open eyes. Racing mind → slow tempo, add 3 longer exhalations.</p>
+</div>
+<div class="card">
+<h3>Walking Mindfulness (WM)</h3>
+<p><strong>Goal:</strong> Transfer stability to movement; broaden peripheral awareness.</p>
+<p><strong>How:</strong> Start slow: feel lift/shift/placement of feet. Progress to normal pace with soft gaze. Optionally count 5 cycles to settle.</p>
+<p><strong>Pitfalls:</strong> Planning future → anchor to foot sole pressure. Overly stiff gait → relax arms, allow natural swing.</p>
+</div>
+<div class="card">
+<h3>Micro-Hits (Tier 1)</h3>
+<p><strong>Goal:</strong> Habitual state reinstatement (30–45 s).</p>
+<p><strong>How:</strong> At a cue (email, phone unlock): pause → 3 breaths → scan tension → label (“planning”) → soften posture.</p>
+<p><strong>Pitfalls:</strong> Forgetting: create physical prompt (sticky dot on screen). Shallow breaths: stand up, enlarge chest space.</p>
+</div>
+<div class="card">
+<h3>Micro OM Burst (Tier 2)</h3>
+<p><strong>Goal:</strong> Workday mini open monitoring (~2 min) for aperture training.</p>
+<p><strong>How:</strong> Stand or sit upright; open auditory field; watch sensations appear/disappear. End with one breath of gratitude.</p>
+<p><strong>Pitfalls:</strong> Treating as “another task” → pair with existing break (water refill). Distraction → note “hearing,” resume openness.</p>
+</div>
+<div class="card">
+<h3>Combo Session (FA → OM → CMP)</h3>
+<p><strong>Goal:</strong> Set-shifting agility & integration.</p>
+<p><strong>How:</strong> 10m FA → shift to 15m OM → finish 10m compassion. Brief breath between modes.</p>
+<p><strong>Pitfalls:</strong> Carrying tight focus into Compassion (feels dry). <em>Fix:</em> Insert 3 relaxed breaths between segments.</p>
+</div>
+</div>
+</section>
+
+<section id="augmentation">
+<h2>Augmentation Toolkit (“Data Augmentation for the Mind”)</h2>
+<p>Use a simple matrix; raise <em>one</em> dimension when baseline sessions are stable. Goal: shrink performance gap between clean baseline and perturbed contexts.</p>
+
+<table>
+<thead><tr><th>Dimension</th><th>Progression Ladder</th><th>Advance When…</th></tr></thead>
+<tbody>
+<tr><td>Posture</td><td>Seated → different seat → standing → slow walk → normal walk → balance pad micro-sway</td><td>Walking calm % within ~10–15% of seated baseline</td></tr>
+<tr><td>Noise</td><td>Silent → white noise → soft café → variable outdoors → multi-source</td><td>Current noise calm % ≥90% of silent</td></tr>
+<tr><td>Visual</td><td>Eyes closed → half-open → open peripheral → gentle scanning</td><td>Stability unchanged eyes-open</td></tr>
+<tr><td>Affective</td><td>Neutral → mild positive prime → mild negative prime → alternating</td><td>Can settle within ~60–90s after prime</td></tr>
+<tr><td>Cognitive Load</td><td>Single task → dual (breath+sound) → counting every 5 breaths → deliberate anchor drop → arithmetic prime</td><td>Recovery latency under ~5–7s</td></tr>
+<tr><td>Temporal</td><td>Fixed durations → add one short & one long session/week → randomize</td><td>No anxiety about clock</td></tr>
+<tr><td>Sequence</td><td>FA only → FA+OM → FA→OM→CMP → random order</td><td>Transition feels smooth</td></tr>
+</tbody>
+</table>
+
+<p><strong>Tracking Suggestion:</strong> Simple table with week numbers and current level per dimension. Include a weekly <em>clean baseline session</em> to verify no regression.</p>
+</section>
+
+<section id="pitfalls">
+<h2>Common Pitfalls & Solutions</h2>
+<table>
+<thead><tr><th>Pitfall</th><th>Why It Happens</th><th>Solution</th></tr></thead>
+<tbody>
+<tr><td>Plateau in calm %</td><td>Overfitting to silent context</td><td>Add one augmentation dimension (noise or eyes-open) before increasing minutes</td></tr>
+<tr><td>Increasing aversion / boredom</td><td>Monotony & low challenge</td><td>Introduce Combo session or walking variant; consider frequency shift to 5+2 pattern</td></tr>
+<tr><td>Sleepiness during Body Scan</td><td>Too close to bedtime / low arousal</td><td>Move earlier; open eyes; alternate with Light FA</td></tr>
+<tr><td>Over-effort (tight jaw) in NF</td><td>Chasing numbers</td><td>Broaden attention, treat birds as bonus; schedule one device-free day</td></tr>
+<tr><td>Noting feels mechanical</td><td>Labeling too often</td><td>Increase interval; use noting only first half of session</td></tr>
+<tr><td>Compassion triggers resistance</td><td>Difficult target too soon</td><td>Return to neutral person for a week; shorten session</td></tr>
+<tr><td>Micro-hits forgotten</td><td>No salient cues</td><td>Add environmental triggers (sticky dot) & track completion (checkbox)</td></tr>
+<tr><td>No transfer to daily life</td><td>Only training in ideal conditions</td><td>Increase augmentation; add applied drills (mindful email, urge surfing)</td></tr>
+<tr><td>Baseline quality declines after added variability</td><td>Too many perturbations at once</td><td>Roll back most recent augmentation; maintain for a week</td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="metrics">
+<h2>Metrics & Review</h2>
+<table>
+<thead><tr><th>Metric</th><th>How to Measure</th><th>Target Trend</th></tr></thead>
+<tbody>
+<tr><td>Consistency</td><td># formal days / planned</td><td>≥5 formal days</td></tr>
+<tr><td>Calm % (Muse)</td><td>Average of matched quiet sessions (3-session rolling)</td><td>+5–10 points vs Week 2 OR stable under harder context</td></tr>
+<tr><td>Recovery Latency</td><td>Seconds from noticing drift to stable anchor (estimate)</td><td>↓ 25–40% by Week 8</td></tr>
+<tr><td>ΔNoise Gap</td><td>Calm%(quiet) – Calm%(noise)</td><td>≤10–15% by Week 9</td></tr>
+<tr><td>Spontaneous Micro-Awareness</td><td># times you notice tension without cue</td><td>Upward trend then plateau</td></tr>
+<tr><td>Compassion Warmth</td><td>Self-rating 1–10 after session</td><td>Increase 2–3 points from start</td></tr>
+<tr><td>Micro-Hit Adherence</td><td>Completed / intended</td><td>≥80% without reminders Week 10</td></tr>
+</tbody>
+</table>
+<p><strong>Weekly Review (5–8 min, Sunday):</strong> Graph or jot key metrics; identify one “win,” one friction, and one small tweak. Only change one variable at a time.</p>
+</section>
+
+<section id="maintenance">
+<h2>Maintenance (Post Week 10)</h2>
+<table>
+<thead><tr><th>Component</th><th>Weekly Minimum</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Anchor Session (FA or OM)</td><td>5–6 × 15–20m</td><td>Alternate narrow/broad</td></tr>
+<tr><td>Neurofeedback</td><td>2 × 12–15m</td><td>One challenge context</td></tr>
+<tr><td>Compassion</td><td>2 × 12m</td><td>Include difficult person weekly</td></tr>
+<tr><td>Walking Mindfulness</td><td>2 × 12–15m</td><td>Commute or park</td></tr>
+<tr><td>Micro-Hits</td><td>6–8/day</td><td>Stable cues</td></tr>
+<tr><td>Augmentation</td><td>Rotate one dimension / month</td><td>Prevents stagnation</td></tr>
+<tr><td>Reflection</td><td>2 × 5m</td><td>Adjust for life load</td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="references">
+<h2>References (Readable Summary)</h2>
+<p class="muted">Selected peer-reviewed studies and reviews informing design (not exhaustive; simplified for accessibility).</p>
+<ol class="ref-list">
+<li>Lutz A, Slagter HA, Dunne JD, Davidson RJ. Attention regulation and monitoring in meditation. <em>Trends Cogn Sci</em>. 2008.</li>
+<li>Tang YY, Hölzel BK, Posner MI. The neuroscience of mindfulness meditation. <em>Nat Rev Neurosci</em>. 2015.</li>
+<li>Lazar SW et al. Meditation experience associated with increased cortical thickness. <em>Neuroreport</em>. 2005.</li>
+<li>Fredrickson BL et al. Open hearts build lives: Positive emotions from loving-kindness meditation. <em>J Pers Soc Psychol</em>. 2008.</li>
+<li>Jha AP et al. Mindfulness training modifies subsystems of attention. <em>Cogn Affect Behav Neurosci</em>. 2007.</li>
+<li>Ericsson KA. Deliberate practice and acquisition of expert performance. <em>Psychol Rev</em>. 1993.</li>
+<li>Roediger HL, Karpicke JD. Test-enhanced learning: Retrieval practice. <em>Psychol Sci</em>. 2006.</li>
+<li>Smith PJ, Tallon-Baudry C. Mindful attention and the early sensory responses. <em>Curr Opin Psychol</em>. 2019.</li>
+<li>Dahl CJ, Lutz A, Davidson RJ. Reconstructing and deconstructing the self (meditation). <em>Trends Cogn Sci</em>. 2015.</li>
+<li>Bishop SR et al. Mindfulness: A proposed operational definition. <em>Clin Psychol</em>. 2004.</li>
+<li>Zeidan F et al. Mindfulness meditation improves cognition. <em>Conscious Cogn</em>. 2010.</li>
+<li>Kiken LG et al. From state to trait: Trajectories of state mindfulness. <em>Pers Individ Dif</em>. 2015.</li>
+</ol>
+<p class="muted">Disclaimer: Consumer neurofeedback evidence is still emerging; this plan uses it conservatively as calibration.</p>
+</section>
+
+<footer>
+  <hr/>
+  <p class="muted">You may adapt timings ±20% to fit life load. Consistency + gentle curiosity trump perfection. Version 1.0</p>
+</footer>
+</body>
+</html>
