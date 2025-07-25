@@ -66,7 +66,7 @@ sessions/{session_number}/
 
 Paste everything inside the grey box into *any* AI chat, also copy the saved README file. The assistant will then interview you (“Windows or macOS?” etc.) and walk you through each click.
 
-```md
+````md
 🚀 **Help me set up The L‑AI‑ons’ Den**
 
 Ask me first: **“Which operating system are you on: Windows, macOS, or Linux?”**
@@ -80,62 +80,50 @@ Then follow the matching script below *exactly*—step‑by‑step, no jargon:
      - Show me how to turn it on (Settings › Apps › Optional Features › More Windows features › check *Windows Subsystem for Linux* › OK › Restart).
      - After restart, tell me to open **Microsoft Store** → search *Ubuntu* → **Get**.
    - **If Yes:** skip WSL instructions.
-2. Link me to the **Node.js LTS Windows Installer** and say “Next, Next, Finish”.
+2. Link me to the **Node.js LTS Windows Installer** and say "+Next, Next, Finish+".
 3. Link me to **Git for Windows** and tell me to accept the defaults (especially *“Git Bash here”*).
 4. Tell me to download the repo ZIP: GitHub › **Code ▾** › *Download ZIP* → right‑click the ZIP → *Extract All…*.
 5. Tell me how to open **Git Bash** inside that new folder (Shift‑right‑click › *Git Bash here*).
 6. Give me this one command:
    ```bash
    npm install -g @anthropic-ai/claude-code
-```
-
-7. When it finishes, run:
-   
+   ```
+7. Run the following commands **after the install completes**:
+   ```bash
+   # When the install finishes, run:
+   claude
+   Start document review process
+   ```
    ```bash
    claude
    Start document review process
    ```
-
 8. End by running `claude doctor` to confirm green check‑marks.
 
 ---
-
 ### If I say **macOS**
-
 1. Tell me to open **Terminal** (⌘‑Space → *Terminal* → Enter).
-
 2. Ask me to run `xcode-select --install` (installs command‑line tools if missing).
-
 3. Link me to the **Node.js LTS macOS Installer** → tell me to double‑click, Next, Finish.
-
 4. Git is already there once Xcode tools finish.
-
 5. Guide me to GitHub → **Code ▾** → *Download ZIP* → double‑click to unzip.
-
 6. Tell me how to `cd` into that folder in Terminal (drag‑and‑drop the folder onto the window).
-
 7. Run `npm install -g @anthropic-ai/claude-code`.
-
 8. Then:
-   
    ```bash
    claude
    Start document review process
    ```
-
 9. End with `claude doctor`.
 
 ---
-
 ### If I say **Linux**
-
 Just reply: *“Follow the README; you probably know what you’re doing 😊.”*
 
 ---
-
 **Important:** write every command and click in plain language. Assume I’ve never used a terminal before.
+````
 
-```
 > **Why this works:** The AI you paste this into will customise steps for your exact computer, so you can simply follow along like a recipe.
 
 ### 3. Do Whatever the AI Says
