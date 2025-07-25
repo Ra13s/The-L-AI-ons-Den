@@ -2,7 +2,7 @@
 
 ![A parody of "Daniel in the Lions' Den" by Peter Paul Rubens (c. 1615)](img/in_the_den.jpg)
 
-Welcome to The L-AI-ons' Den, a framework that pits your documents against a panel of ruthless AI "Lions" to make your work stronger. This multi-agent system provides comprehensive analysis from specialized AI perspectives, plus optional automated fix application. It works with Claude Code, Gemini, and other AI platforms.
+Welcome to The L-AI-ons' Den (read lions), a framework that pits your documents against a panel of ruthless AI "Lions" to make your work stronger. This multi-agent system provides comprehensive analysis from specialized AI perspectives, plus optional automated fix application. It works with Claude Code, Gemini, and other AI platforms.
 
 ## 🎯 What This System Does
 
