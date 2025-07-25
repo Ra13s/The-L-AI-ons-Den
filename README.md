@@ -57,7 +57,7 @@ sessions/{session_number}/
 
 ### 1. Save the README in Plain‑Text
 
-1. Click this link → **<https://raw.githubusercontent.com/OWNER/The-L-AI-ons-Den/main/README.md>** (shows the README as raw text).  
+1. Click this link → **<[https://raw.githubusercontent.com/OWNER/The-L-AI-ons-Den/main/README.md](https://raw.githubusercontent.com/Ra13s/The-L-AI-ons-Den/refs/heads/main/README.md)>** (shows the README as raw text).  
 2. Press **Ctrl + S / Cmd + S** and save it somewhere easy, like your **Desktop**.
 
 *(If the link ever breaks: open the GitHub page, press the **Raw** button at the top‑right, then save.)*
